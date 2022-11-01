@@ -1,8 +1,7 @@
 import { nanoid } from 'nanoid';
 import { ContactsWrapp } from './ContactForm.module';
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getFilteredContacts } from 'redux/contactsSelector';
+import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
 
 export default function ContactForm() {

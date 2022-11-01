@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeContact } from 'redux/operations';
 export default function PhoneBookList({ items }) {
