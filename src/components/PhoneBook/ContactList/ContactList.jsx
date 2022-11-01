@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeContact } from 'redux/itemsSlice';
+import { removeContact } from 'redux/operations';
 export default function PhoneBookList({ items }) {
   const dispatch = useDispatch();
 
@@ -22,13 +22,13 @@ export default function PhoneBookList({ items }) {
   return <ul>{elements}</ul>;
 }
 
-PhoneBookList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-    })
-  ),
-  removeContact: PropTypes.func.isRequired,
-};
+// PhoneBookList.propTypes = {
+//   items: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.string.isRequired,
+//       number: PropTypes.string.isRequired,
+//       id: PropTypes.string.isRequired,
+//     })
+//   ),
+//   removeContact: PropTypes.func.isRequired,
+// };
