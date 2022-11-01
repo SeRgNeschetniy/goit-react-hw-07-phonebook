@@ -1,10 +1,20 @@
 import { nanoid } from 'nanoid';
 import { ContactsWrapp } from './ContactForm.module';
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getFilteredContacts } from 'redux/contactsSelector';
+import { addContact } from 'redux/operations';
 
-export default function ContactForm({ addContact }) {
+export default function ContactForm() {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const onAddContact = data => {
+    const action = addContact(data);
+    dispatch(action);
+  };
 
   const nameId = nanoid();
   const numberId = nanoid();
@@ -24,7 +34,7 @@ export default function ContactForm({ addContact }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addContact({ name, number });
+    onAddContact({ name, number });
     setName('');
     setNumber('');
   };

@@ -22,19 +22,17 @@ const contactsSlice = createSlice({
       state.error = action.payload;
     },
     [addContact.pending](state) {
-      state.loading = true;
+      state.isLoading = true;
     },
     [addContact.fulfilled](state, action) {
-      console.log('addContact.fulfilled');
       state.items.push(action.payload);
     },
     [addContact.rejected](state, action) {
-      console.log('addContact.rejected');
       state.isLoading = false;
       state.error = action.payload;
     },
     [removeContact.pending](state) {
-      state.loading = true;
+      state.isLoading = true;
     },
     [removeContact.fulfilled](state, action) {
       state.isLoading = false;
